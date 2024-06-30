@@ -93,11 +93,11 @@ func NewGetPrivateBuyParamsWithHTTPClient(client *http.Client) *GetPrivateBuyPar
 	}
 }
 
-/*GetPrivateBuyParams contains all the parameters to send to the API endpoint
+/*
+GetPrivateBuyParams contains all the parameters to send to the API endpoint
 for the get private buy operation typically these are written to a http.Request
 */
 type GetPrivateBuyParams struct {
-
 	/*Advanced
 	  Advanced option order type. (Only for options)
 
@@ -138,11 +138,11 @@ type GetPrivateBuyParams struct {
 
 	*/
 	ReduceOnly *bool
-	/*StopPrice
+	/*TriggerPrice
 	  Stop price, required for stop limit orders (Only for stop orders)
 
 	*/
-	StopPrice *float64
+	TriggerPrice *float64
 	/*TimeInForce
 	  <p>Specifies how long the order remains in effect. Default `"good_til_cancelled"`</p> <ul> <li>`"good_til_cancelled"` - unfilled order remains in order book until cancelled</li> <li>`"fill_or_kill"` - execute a transaction immediately and completely or not at all</li> <li>`"immediate_or_cancel"` - execute a transaction immediately, and any portion of the order that cannot be immediately filled is cancelled</li> </ul>
 
@@ -287,13 +287,13 @@ func (o *GetPrivateBuyParams) SetReduceOnly(reduceOnly *bool) {
 
 // WithStopPrice adds the stopPrice to the get private buy params
 func (o *GetPrivateBuyParams) WithStopPrice(stopPrice *float64) *GetPrivateBuyParams {
-	o.SetStopPrice(stopPrice)
+	o.SetTriggerPrice(stopPrice)
 	return o
 }
 
-// SetStopPrice adds the stopPrice to the get private buy params
-func (o *GetPrivateBuyParams) SetStopPrice(stopPrice *float64) {
-	o.StopPrice = stopPrice
+// SetTriggerPrice adds the stopPrice to the get private buy params
+func (o *GetPrivateBuyParams) SetTriggerPrice(stopPrice *float64) {
+	o.TriggerPrice = stopPrice
 }
 
 // WithTimeInForce adds the timeInForce to the get private buy params
@@ -331,7 +331,6 @@ func (o *GetPrivateBuyParams) SetType(typeVar *string) {
 
 // WriteToRequest writes these params to a swagger request
 func (o *GetPrivateBuyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
-
 	if err := r.SetTimeout(o.timeout); err != nil {
 		return err
 	}
@@ -451,16 +450,16 @@ func (o *GetPrivateBuyParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 
 	}
 
-	if o.StopPrice != nil {
+	if o.TriggerPrice != nil {
 
 		// query param stop_price
 		var qrStopPrice float64
-		if o.StopPrice != nil {
-			qrStopPrice = *o.StopPrice
+		if o.TriggerPrice != nil {
+			qrStopPrice = *o.TriggerPrice
 		}
 		qStopPrice := swag.FormatFloat64(qrStopPrice)
 		if qStopPrice != "" {
-			if err := r.SetQueryParam("stop_price", qStopPrice); err != nil {
+			if err := r.SetQueryParam("trigger_price", qStopPrice); err != nil {
 				return err
 			}
 		}

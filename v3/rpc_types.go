@@ -141,8 +141,8 @@ func (RPCResponse) GetHeader(string) string {
 	return ""
 }
 
-func (RPCResponse) GetHeaders(string) string {
-	return ""
+func (RPCResponse) GetHeaders(string) []string {
+	return nil
 }
 
 func (r *RPCResponse) Body() io.ReadCloser {
