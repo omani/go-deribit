@@ -10,13 +10,13 @@ I do not have the time to look after this project. It was good fun but all good 
 
 This project is now using go1.13 with Go Modules, but should remain compatible with `dep`. Also, as there are some breaking changes introduced by the latest schema changes from the remote API, I have decided to carry on development in the new `v3` namespace with the project root containing the code tagged `v2.x`.
 
-`import "github.com/adampointer/go-deribit/v3"`
+`import "github.com/omani/go-deribit/v3"`
 
 We now have the latest API methods which were recently released such as `public/get_tradingview_chart_data`.
 
 I recommend using the `v3` project in your projects as all onward development will now be within this project.
 
-[GoDoc API Documentation](https://godoc.org/github.com/adampointer/go-deribit/v3)
+[GoDoc API Documentation](https://godoc.org/github.com/omani/go-deribit/v3)
 
 ## Overview
 
