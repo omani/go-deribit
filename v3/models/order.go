@@ -16,7 +16,6 @@ import (
 // Order order
 // swagger:model order
 type Order struct {
-
 	// advanced
 	Advanced Advanced `json:"advanced,omitempty"`
 
@@ -97,7 +96,7 @@ type Order struct {
 	ReduceOnly ReduceOnly `json:"reduce_only,omitempty"`
 
 	// stop price
-	StopPrice StopPrice `json:"stop_price,omitempty"`
+	StopPrice StopPrice `json:"trigger_price,omitempty"`
 
 	// time in force
 	// Required: true
@@ -232,7 +231,6 @@ func (m *Order) Validate(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateAdvanced(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Advanced) { // not required
 		return nil
 	}
@@ -248,7 +246,6 @@ func (m *Order) validateAdvanced(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateAmount(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Amount) { // not required
 		return nil
 	}
@@ -264,7 +261,6 @@ func (m *Order) validateAmount(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateAPI(formats strfmt.Registry) error {
-
 	if err := m.API.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("api")
@@ -276,7 +272,6 @@ func (m *Order) validateAPI(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateAveragePrice(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AveragePrice) { // not required
 		return nil
 	}
@@ -292,7 +287,6 @@ func (m *Order) validateAveragePrice(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateCommission(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Commission) { // not required
 		return nil
 	}
@@ -308,7 +302,6 @@ func (m *Order) validateCommission(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateCreationTimestamp(formats strfmt.Registry) error {
-
 	if err := m.CreationTimestamp.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("creation_timestamp")
@@ -320,7 +313,6 @@ func (m *Order) validateCreationTimestamp(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateDirection(formats strfmt.Registry) error {
-
 	if err := m.Direction.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("direction")
@@ -332,7 +324,6 @@ func (m *Order) validateDirection(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateFilledAmount(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FilledAmount) { // not required
 		return nil
 	}
@@ -348,7 +339,6 @@ func (m *Order) validateFilledAmount(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateImplv(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Implv) { // not required
 		return nil
 	}
@@ -364,7 +354,6 @@ func (m *Order) validateImplv(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateInstrumentName(formats strfmt.Registry) error {
-
 	if err := m.InstrumentName.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("instrument_name")
@@ -376,7 +365,6 @@ func (m *Order) validateInstrumentName(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateIsLiquidation(formats strfmt.Registry) error {
-
 	if err := validate.Required("is_liquidation", "body", m.IsLiquidation); err != nil {
 		return err
 	}
@@ -385,7 +373,6 @@ func (m *Order) validateIsLiquidation(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateLabel(formats strfmt.Registry) error {
-
 	if err := m.Label.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("label")
@@ -397,7 +384,6 @@ func (m *Order) validateLabel(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateLastUpdateTimestamp(formats strfmt.Registry) error {
-
 	if err := m.LastUpdateTimestamp.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("last_update_timestamp")
@@ -409,7 +395,6 @@ func (m *Order) validateLastUpdateTimestamp(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateMaxShow(formats strfmt.Registry) error {
-
 	if err := m.MaxShow.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("max_show")
@@ -421,7 +406,6 @@ func (m *Order) validateMaxShow(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateOrderID(formats strfmt.Registry) error {
-
 	if err := m.OrderID.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("order_id")
@@ -433,7 +417,6 @@ func (m *Order) validateOrderID(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateOrderState(formats strfmt.Registry) error {
-
 	if err := m.OrderState.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("order_state")
@@ -445,7 +428,6 @@ func (m *Order) validateOrderState(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateOrderType(formats strfmt.Registry) error {
-
 	if err := m.OrderType.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("order_type")
@@ -457,7 +439,6 @@ func (m *Order) validateOrderType(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateOriginalOrderType(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.OriginalOrderType) { // not required
 		return nil
 	}
@@ -473,7 +454,6 @@ func (m *Order) validateOriginalOrderType(formats strfmt.Registry) error {
 }
 
 func (m *Order) validatePostOnly(formats strfmt.Registry) error {
-
 	if err := m.PostOnly.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("post_only")
@@ -485,7 +465,6 @@ func (m *Order) validatePostOnly(formats strfmt.Registry) error {
 }
 
 func (m *Order) validatePrice(formats strfmt.Registry) error {
-
 	if err := m.Price.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("price")
@@ -497,7 +476,6 @@ func (m *Order) validatePrice(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateProfitLoss(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ProfitLoss) { // not required
 		return nil
 	}
@@ -513,7 +491,6 @@ func (m *Order) validateProfitLoss(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateReduceOnly(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ReduceOnly) { // not required
 		return nil
 	}
@@ -529,7 +506,6 @@ func (m *Order) validateReduceOnly(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateStopPrice(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StopPrice) { // not required
 		return nil
 	}
@@ -545,7 +521,6 @@ func (m *Order) validateStopPrice(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateTimeInForce(formats strfmt.Registry) error {
-
 	if err := m.TimeInForce.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
 			return ve.ValidateName("time_in_force")
@@ -557,7 +532,6 @@ func (m *Order) validateTimeInForce(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateTrigger(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Trigger) { // not required
 		return nil
 	}
@@ -573,7 +547,6 @@ func (m *Order) validateTrigger(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateTriggered(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Triggered) { // not required
 		return nil
 	}
@@ -589,7 +562,6 @@ func (m *Order) validateTriggered(formats strfmt.Registry) error {
 }
 
 func (m *Order) validateUsd(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Usd) { // not required
 		return nil
 	}
