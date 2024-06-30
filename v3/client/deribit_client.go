@@ -11,15 +11,15 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/adampointer/go-deribit/v3/client/account_management"
-	"github.com/adampointer/go-deribit/v3/client/internal"
-	"github.com/adampointer/go-deribit/v3/client/market_data"
-	"github.com/adampointer/go-deribit/v3/client/private"
-	"github.com/adampointer/go-deribit/v3/client/public"
-	"github.com/adampointer/go-deribit/v3/client/supporting"
-	"github.com/adampointer/go-deribit/v3/client/trading"
-	"github.com/adampointer/go-deribit/v3/client/wallet"
-	"github.com/adampointer/go-deribit/v3/client/websocket_only"
+	"github.com/omani/go-deribit/v3/client/account_management"
+	"github.com/omani/go-deribit/v3/client/internal"
+	"github.com/omani/go-deribit/v3/client/market_data"
+	"github.com/omani/go-deribit/v3/client/private"
+	"github.com/omani/go-deribit/v3/client/public"
+	"github.com/omani/go-deribit/v3/client/supporting"
+	"github.com/omani/go-deribit/v3/client/trading"
+	"github.com/omani/go-deribit/v3/client/wallet"
+	"github.com/omani/go-deribit/v3/client/websocket_only"
 )
 
 // Default deribit HTTP client.
