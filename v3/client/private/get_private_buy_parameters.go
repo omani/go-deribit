@@ -285,8 +285,8 @@ func (o *GetPrivateBuyParams) SetReduceOnly(reduceOnly *bool) {
 	o.ReduceOnly = reduceOnly
 }
 
-// WithStopPrice adds the stopPrice to the get private buy params
-func (o *GetPrivateBuyParams) WithStopPrice(stopPrice *float64) *GetPrivateBuyParams {
+// WithTriggerPrice adds the stopPrice to the get private buy params
+func (o *GetPrivateBuyParams) WithTriggerPrice(stopPrice *float64) *GetPrivateBuyParams {
 	o.SetTriggerPrice(stopPrice)
 	return o
 }
