@@ -512,7 +512,7 @@ func (m *Order) validateStopPrice(formats strfmt.Registry) error {
 
 	if err := m.StopPrice.Validate(formats); err != nil {
 		if ve, ok := err.(*errors.Validation); ok {
-			return ve.ValidateName("stop_price")
+			return ve.ValidateName("trigger_price")
 		}
 		return err
 	}
