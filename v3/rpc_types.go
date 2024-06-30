@@ -12,9 +12,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/omani/go-deribit/v3/models"
-
 	"github.com/go-openapi/runtime"
+
+	"github.com/omani/go-deribit/v3/models"
 )
 
 const rpcVersion = "2.0"
@@ -138,6 +138,10 @@ func (r *RPCResponse) Message() string {
 }
 
 func (RPCResponse) GetHeader(string) string {
+	return ""
+}
+
+func (RPCResponse) GetHeaders(string) string {
 	return ""
 }
 
